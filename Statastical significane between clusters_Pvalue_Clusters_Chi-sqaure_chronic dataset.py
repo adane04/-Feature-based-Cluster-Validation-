@@ -23,7 +23,7 @@ import scipy.stats as stats
 # In[2]:
 
 
-# read all the data  for morto
+# read all the data  for clluster 1
 data_zero="Cluster_1.csv"
 df0=read_csv(data_zero,index_col=0)
 print(df0.shape)
@@ -43,7 +43,7 @@ df00.head(1)
 # In[4]:
 
 
-# read all the data  for morto
+# read all the data  from a cluster
 data_one="Cluster_2.csv"
 df1=read_csv(data_one,index_col=0)
 print(df1.shape)
