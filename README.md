@@ -1,6 +1,5 @@
-## Label-based approach based on Cross-validation for cluster validation
-# 
- The proposed cluster  validation method is used to measure the performance of a clustering model to predict cluster labels for new data points, given that the model is already constructed from the training data.This approach is based on cross-validation with the following procesures: 
+## Label-based approach based on Cross-validation for cluster validation 
+The proposed cluster  validation method is used to measure the performance of a clustering model to predict cluster labels for new data points, given that the model is already constructed from the training data.This approach is based on cross-validation with the following procesures: 
  1. Firstly, the new approach calculates the occurrence of features in training and testing samples assigned to the same cluster, in terms of probability score. 
 2. Then the distance between the vector of scores in training and testing samples is calculated using the root mean square error (RMSE) or another related distance metric in clusters of every k-fold. 
 3. Finally, the global cluster validity index is by summing up all scores across all the clusters to measure the compactness of the defined clusters. 
@@ -46,7 +45,7 @@ y^_m, m = 1,…, q: the probability that a sample from the testing dataset assig
  4. When the loop in step 3 finishes (and so every fold served as the test set), take the average over the k folds of the recorded scores for each cluster and/or overall, the clusters (equation (3)). 
 
 
- In[ ]:
+
 
 
 
