@@ -17,34 +17,9 @@ import numpy as np
 import pandas as pd
 import scipy.stats as stats
 from sklearn.cluster import KMeans
-
-
-# # Read   original data
-
-# In[ ]:
-
-
-data="Dataset_final_chronic.csv"
-df=read_csv(data,index_col=0)
-print(df.shape)
-df.head(1)
-
-
-# # Clustering  with Quality measure using  cross-Validation
-# we can predict the probabilities of the 6 problems in patients in the test data based on their membership in the clusters. This can be done by using the crossvalidation procedure. In each fold of the crossvalidation:
-# 
-# a.  perform the clustering on the training part of the data set
-# b.  assign patients from the test part of the data set obtained in step (a)
-# c.  calculate a quality measure expressing the difference between the probabilities from the training data and the test data assigned to the same cluster in step (b)
-# 
-# The quality measures could be the Root Mean Squared Error (RMSE) or the Mean Average Percentage Error (MAPE), for example.
-
-# In[ ]:
-
-
-from sklearn.cluster import KMeans
+#from sklearn.cluster import KMeans
 from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_absolute_error
+#from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import KFold
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -53,24 +28,32 @@ import prince
 from sklearn import preprocessing
 
 
-# In[ ]:
+
+# # Read   original data
+data="Dataset_final_chronic.csv"
+df=read_csv(data,index_col=0)
+print(df.shape)
+df.head(1)
 
 
+# # Clustering  with Quality measure using  cross-Validation
+# we can predict the probabilities of the 6 problems in patients in the test data based on their membership in the clusters. This can be done by using the crossvalidation procedure. In each fold of the crossvalidation:
+# a.  perform the clustering on the training part of the data set
+# b.  assign patients from the test part of the data set obtained in step (a)
+# c.  calculate a quality measure expressing the difference between the probabilities from the training data and the test data assigned to the same cluster in step (b)
+# 
+# The quality measures could be the Root Mean Squared Error (RMSE) or the Mean Average Percentage Error (MAPE), for example
 cv = KFold(n_splits=10, random_state=42, shuffle=True)
 for train_index, test_index in cv.split(df1):
     X_train, X_test = df1.iloc[train_index], df1.iloc[test_index]
 print(len(X_train))
 print(len(X_test))
-
-
-# In[ ]:
-
-
 RMSE_result=pd.DataFrame({})
 MAPE_result=pd.DataFrame({})
 
 km = KMeans(n_clusters=3,init='k-means++', max_iter=300, n_init=10) 
 cv = KFold(n_splits=10, random_state=42, shuffle=True)
+
 for train_index, test_index in cv.split(df1):
     X_train, X_test = df1.iloc[train_index], df1.iloc[test_index]
     #km.fit(X_train)
@@ -177,42 +160,11 @@ for train_index, test_index in cv.split(df1):
         # print('mape_sum:',np.round(mape_sum,5))
         #print('RMSE:',np.round(RMSE,4))
         #print('MAPE:',np.round(MAPE,2),'%')
-        
-        # RMSE,  over all partitions 
-        #RMSE_total=0
-        #RMSE_total=RMSE_total+RMSE
-        #RMSE_avg=RMSE_total/3   # 3 is the number of  clsuters
-        
-       
-        #print('RMSE_avg:',RMSE_avg)
-        
-        #RMSE_avg=pd.DataFrame([RMSE_avg])
-        #RMSE_result=RMSE_result.append(RMSE_avg)
-        
-      
-      
-        #MAPE_total=0
-        #MAPE_total=MAPE_total+MAPE
-        #MAPE_avg=MAPE_total/3 # # 3 is the number of  clusters
-        
-       
-        #print('MAPE_avg:',MAPE_avg) 
-        
-        #MAPE_avg=pd.DataFrame([MAPE_avg])
-        #MAPE_result=MAPE_result.append(MAPE_avg)
-            
+  
 
-
+        
 # ### Root Mean squared error
-
-# In[ ]:
-
-
 len(RMSE_result)
-
-
-# In[ ]:
-
 
 print('..........................................')
 rmse1=RMSE_result.iloc[0:3] 
@@ -255,14 +207,7 @@ print(rmse_add.reset_index())
 
 # ### Mean Absolute percent error
 
-# In[ ]:
-
-
 len(MAPE_result)
-
-
-# In[ ]:
-
 
 mape1=MAPE_result.iloc[0:3] 
 mape1.columns = ["MAPE1"]
