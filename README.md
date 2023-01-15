@@ -36,12 +36,9 @@ y^_m, m = 1,…, q: the probability that a sample from the testing dataset assig
     
 	f) Assign data points from the test dataset (selected in step ‘a’) into the corresponding clusters obtained in step ‘e.’
 	g) For each cluster i = 1, …, C found in step 'e':
- 	   i) Compute the probabilities y_m, m = 1,…, q  of the occurrence of the features  in cluster i based on the samples in the training dataset.
-        
-       ii) Compute the probabilities y ̂_m, m = 1,…, q of the occurrence of the features in cluster i using the assignment of the points from the test dataset to the clusters, which was obtained in step ‘f.’
-     
-  iii) Compute the root mean squared error (MAPEij) between the probabilities calculated in steps ‘a.’ and ‘b.’. Note down the scores/errors as a quality measure for cluster i obtained in fold j.  
-     
+ 	   i) Compute the probabilities y_m, m = 1,…, q  of the occurrence of the features  in cluster i based on the samples in the training dataset.       
+       ii) Compute the probabilities y ̂_m, m = 1,…, q of the occurrence of the features in cluster i using the assignment of the points from the test dataset to the clusters, which was obtained in step ‘f.’     
+  iii) Compute the root mean squared error (MAPEij) between the probabilities calculated in steps ‘a.’ and ‘b.’. Note down the scores/errors as a quality measure for cluster i obtained in fold j.       
  4. When the loop in step 3 finishes (and so every fold served as the test set), take the average over the k folds of the recorded scores for each cluster and/or overall, the clusters (equation (3)). 
 
 
