@@ -171,10 +171,7 @@ print("P value")
 print(p_value.round(4))
 
 
-# ### Complete code 
-
-# In[19]:
-
+# ## the Complete code goes here
 
 df_report2=pd.DataFrame({})
 #df_report = pd.DataFrame(df_report, columns = ['in','var',"samp1_n", "samp1_per", "samp2_n", "samp2_tot","Chi-sq","DF","CV","PV"])
@@ -264,9 +261,6 @@ print(df_report2)
 #df_report2.to_csv("C:/Progetti/selected_negative_and_positive_samples/report_detail.csv")
 #df3=pd.DataFrame(result)
 #print(result)
-
-
-# In[20]:
 
 
 writer = pd.ExcelWriter('Pvalue_detail_Km_chronic_dataset.xlsx')
