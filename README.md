@@ -5,6 +5,7 @@ The proposed cluster  validation method is used to measure the performance of a 
 3. Finally, the global cluster validity index is computed by summing up all scores across all the clusters to measure the compactness of the defined clusters. 
 
  The detailed description and implementation procedure for the proposed validation approach is presented as follows: 
+ 
  Let:
  F = { λi : i= 1,..., q } :   the set of all features  in a given  dataset
  
