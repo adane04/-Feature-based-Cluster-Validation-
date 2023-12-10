@@ -45,8 +45,7 @@ y^_m, m = 1,…, q: the probability that a sample from the testing dataset assig
   
  4. When the loop in step 3 finishes (and so every fold served as the test set), take the average over the k folds of the recorded scores for each cluster and/or overall the clusters. 
 
-related material 
-https://link.springer.com/article/10.1007/s42979-020-00283-z
+
 
 
 
