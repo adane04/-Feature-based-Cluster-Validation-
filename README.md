@@ -1,5 +1,5 @@
 ## Feature-based approach with  Cross-validation for cluster validation 
-The proposed cluster  validation method is used to measure the performance of a clustering model to predict cluster labels for new data points, given that the model is already constructed from the training data.This approach is based on cross-validation with the following procesures: 
+Feature-based cluster  validation is an alternative method  to cluster validation in clustering analysis, which is used to measure the performance of a clustering model to predict cluster labels for new data points, given that the model is already constructed from the training data. This approach is based on cross-validation with the following procedures: 
  1. Firstly, the new approach calculates the occurrence of features in training and testing samples assigned to the same cluster, in terms of probability score. 
 2. Then the distance between the vector of scores in training and testing samples is calculated using the root mean square error (RMSE) or another related distance metric in clusters of every k-fold. 
 3. Finally, the global cluster validity index is computed by summing up all scores across all the clusters to measure the compactness of the defined clusters. 
@@ -31,7 +31,7 @@ y^_m, m = 1,…, q: the probability that a sample from the testing dataset assig
     
  	c) apply dimensionality reduction (if needed)
     
-	d) apply normalization to dataset (if needed) 
+	d) apply normalization to the dataset (if needed) 
     
 	e) Generate clusters on the training dataset.
     
@@ -41,8 +41,7 @@ y^_m, m = 1,…, q: the probability that a sample from the testing dataset assig
  	   i) Compute the probabilities y_m, m = 1,…, q  of the occurrence of the features  in cluster i based on the samples in the training dataset.
 	   
         ii) Compute the probabilities y ̂_m, m = 1,…, q of the occurrence of the features in cluster i using the assignment of the points from the test dataset to the clusters, which was obtained in step ‘f.’  
-        iii) Compute the root mean squared error (MAPEij) between the probabilities calculated in steps ‘a.’ and ‘b.’. Note down the scores/errors as a quality measure for cluster i obtained in fold j.   
-  
+        iii) Compute the root mean squared error (MAPEij) between the probabilities calculated in steps ‘a.’ and ‘b.’. Note down the scores/errors as a quality measure for cluster i obtained in fold j.     
  4. When the loop in step 3 finishes (and so every fold served as the test set), take the average over the k folds of the recorded scores for each cluster and/or overall the clusters. 
 
 
