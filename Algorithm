@@ -1,3 +1,4 @@
+Algorithm for index computation 
 Let:
 F = { λi : i= 1,..., q } :   the set of all features  in a given  dataset
 q=|F|:  the number of features in a dataset.
